@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 80%;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chat-main {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100vh;
+  text-align: center;
+
+  background: url("../src/assets/parsa-Rn0-yUSblhI-unsplash.jpg") no-repeat
+    bottom/cover;
+}
+
+.header-main {
+  width: 100vw;
+
+  margin-top: 50px;
+  color: aliceblue;
+  font-size: 3em;
+
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-decoration: underline 2px solid;
+}
+
+.logout-button {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+.user-login-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 90vw;
+
+  padding: 10px;
+  margin-bottom: 40px;
+  border-radius: 40px;
+
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.user-login-label {
+  color: rgba(10, 3, 37, 0.751);
+
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+.user-login-input {
+  margin-left: 20px;
+  padding: 5px 90px;
+
+  border-radius: 10px;
+
+  background-color: antiquewhite;
+  font-size: 1.8rem;
+}
+
+.user-error-message {
+  margin: 10px;
+}
+.messages-container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.messages-main {
+  overflow: auto;
+
+  width: 90vw;
+  height: 75vh;
+
+  border-radius: 20px;
+  border: 15px groove red;
+
+  margin-bottom: 10px;
+
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.messages-unordered-list {
+  margin-top: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+
+  margin-top: 10px;
+}
+
+.messages-list.current {
+  justify-content: flex-end;
+  flex-direction: row;
+  text-align: right;
+}
+
+.message-content {
+  display: inline-block;
+  padding: 5px;
+  max-width: 350px;
+
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.message-username {
+  color: yellow;
+  font-size: 16px;
+  padding-bottom: 5px;
+  margin: auto 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.message-send-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+
+  padding: 10px;
+  margin: 10px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 40px;
+}
+
+.message-send-input {
+  padding: 5px 90px;
+  border-radius: 10px;
+
+  background-color: antiquewhite;
+  font-size: 1.8em;
+}
+
+@media screen and (max-width: 800px) {
+  .user-login-container {
+    flex-flow: column nowrap;
   }
-  to {
-    transform: rotate(360deg);
+
+  .user-login-input {
+    padding: 0;
+  }
+
+  .logout-button {
+    left: 45%;
+  }
+
+  .message-send-container {
+    flex-flow: column nowrap;
+    margin-bottom: 40px;
+  }
+
+  .message-send-input {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 0.8em;
   }
 }
