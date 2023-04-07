@@ -90,8 +90,16 @@ h1 {
   justify-content: center;
 }
 
+.messages-unordered-list {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 30px;
+  list-style: none;
+  padding: 0;
+}
+
 .messages-main {
-  overflow: auto;
+  overflow-y: auto;
 
   width: 90vw;
   height: 75vh;
@@ -102,12 +110,6 @@ h1 {
   margin-bottom: 10px;
 
   background-color: rgba(255, 255, 255, 0.25);
-}
-
-.messages-unordered-list {
-  margin-top: 30px;
-  list-style: none;
-  padding: 0;
 }
 
 .messages-list {

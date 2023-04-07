@@ -57,23 +57,6 @@ class Chat extends React.Component {
         });
       });
 
-      room.on("member_leave", (member) => {
-        this.setState({
-          ...this.state,
-          poruke: [
-            ...this.state.poruke,
-            {
-              id: member.id,
-              timestamp: Date.now(),
-              text: `User ${member.clientData.ime} has left the room at `,
-              clientId: member.clientData,
-              member,
-              serviceMember: "MEMBER_LEFT",
-            },
-          ],
-        });
-      });
-
       room.on("message", ({ data, id, timestamp, clientId, member }) => {
         this.setState({
           ...this.state,
@@ -86,6 +69,23 @@ class Chat extends React.Component {
               clientId,
               member,
               serviceMember: "MESSAGE",
+            },
+          ],
+        });
+      });
+
+      room.on("member_leave", (member) => {
+        this.setState({
+          ...this.state,
+          poruke: [
+            ...this.state.poruke,
+            {
+              id: member.clientData.ime,
+              timestamp: Date.now(),
+              text: `User ${member.clientData.ime} has left the room at `,
+              clientId: member.clientData,
+              member,
+              serviceMember: "MEMBER_LEFT",
             },
           ],
         });
