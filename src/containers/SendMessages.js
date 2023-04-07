@@ -21,7 +21,7 @@ class SendMessages extends React.Component {
       this.setState({ error: "" });
     } else {
       this.setState({
-        error: "Please type your message",
+        error: "Please type in your message!",
       });
     }
   }

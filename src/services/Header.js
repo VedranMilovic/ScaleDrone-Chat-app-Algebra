@@ -5,7 +5,7 @@ function Header({ userName, user, onLogout }) {
     <div className="header-main">
       {user.id ? (
         <h1>
-          {userName}, dobrodošli u chat sobu!
+          {userName}, welcome to the chat room!
           <Button
             type="submit"
             onClick={onLogout}
@@ -16,7 +16,7 @@ function Header({ userName, user, onLogout }) {
           </Button>
         </h1>
       ) : (
-        <h1>Dobrodošli u chat aplikaciju!</h1>
+        <h1>Welcome to chat app</h1>
       )}
     </div>
   );

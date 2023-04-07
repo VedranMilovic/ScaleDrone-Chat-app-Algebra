@@ -9,7 +9,7 @@ function UserLogin({ onUserLogin }) {
   const onHandleUserLogin = (event) => {
     event.preventDefault();
     if (!username.trim()) {
-      setError("Molim upišite svoj username!");
+      setError("Please type in your username!");
     } else {
       setError("");
       onUserLogin(username);
@@ -20,7 +20,7 @@ function UserLogin({ onUserLogin }) {
     <div>
       <form onSubmit={onHandleUserLogin} className="user-login-container">
         <label htmlFor="name" className="user-login-label">
-          Vaš username:
+          Your username:
         </label>
         <input
           type="text"
