@@ -29,7 +29,6 @@ class Chat extends React.Component {
       });
 
       headerUserName = loginUser;
-      console.log(`User ${loginUser} has logged in!`);
 
       this.drone.on("open", (error) => {
         if (error) {
@@ -38,9 +37,6 @@ class Chat extends React.Component {
         const user = { ...this.state.user };
         user.id = this.drone.clientId;
         this.setState({ ...this.state, user });
-        console.log(user);
-
-        console.log("Data succesfully loaded");
       });
       const room = this.drone.subscribe("observable-soba");
 
